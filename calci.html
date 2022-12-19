@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+                    body{background-image:url("zoo1.png");
+                                 background-repeat:no-repeat;
+                                  background-color:black;
+                                 display:hidden;
+                              }
+         .container{
+                                 background-color:#222222;
+                                 padding:50px;
+                                 max-width:550px;
+                                 margin:30px auto;
+                                 border-radius:30px;
+                              }
+                       .bv{
+                                    display:grid;
+                                     grid-template-columns:1fr   1fr   1fr   1fr;
+                                     gap:20px;
+                                 }
+                 button{
+                                background-color:rgb(200,220,155);
+                                padding:10px;
+                                border-radius:50px;
+                                width:70px;
+                                height:50px;
+                               font-size:30px;
+                                color:black;
+                                border:6px;
+                                cursor:pointer;
+                           }
+           button:hover{
+                                         background-color:#70757a;
+                                         color:yellow;
+                                       }
+                 #res{border-radius:30px;
+                             border:1px solid blue;
+                             font-size:30px;
+                              border-collapse:collapse;}
+           #mb{background-color:lightblue;
+                        border:1px solid white;
+                        width:1100px;
+                        height:30px;
+                        border-radius:30px;
+                        font-size:25px;
+                        padding:2px;
+                        font-family:arial;
+                        color:blue;
+                        align-items:center;}
+     
+</style>        
+</head>
+<body>
+<div class="container">
+<div  class="bv">
+<table border="0" >
+<caption><b><h1 style="color:pink">Simple Calculator</h1></b></caption>
+<tr>
+<td  align="center" colspan="3"><input type="text"  id ="res"></td>
+<td align="center"><button  onclick="ac()">AC</button></td>
+</tr>
+<tr>
+<td align="center"><button  onclick="show('7')">7</button></td>
+<td align="center"><button  onclick="show('8')">8</button></td>
+<td align="center"><button  onclick="show('9')">9</button></td>
+<td align="center"><button  onclick="show('+')">+</button></td>
+</tr>
+<tr>
+<td align="center"><button  onclick="show('4')">4</button></td>
+<td align="center"><button  onclick="show('5')">5</button></td>
+<td align="center"><button  onclick="show('6')">6</button></td>
+<td align="center"><button  onclick="show('-')">-</button></td>
+</tr>
+<tr>
+<td align="center"><button  onclick="show('1')">1</button></td>
+<td align="center"><button  onclick="show('2')">2</button></td>
+<td align="center"><button  onclick="show('3')">3</button></td>
+<td align="center"><button  onclick="show('*')">*</button></td>
+</tr>
+<tr>
+<td align="center"><button  onclick="show('0')">0</button></td>
+<td align="center"><button  onclick="show('%')">%</button></td>
+<td align="center"><button  onclick="show('/')">/</button></td>
+<td align="center"><button  onclick="cal()">=</button></td>
+</tr>
+</table>
+</div>
+</div>
+<center><p><h1 id="mb">This is used to calculate easly</p></h1></center>
+<script>
+ function  ac()
+  {
+               document.getElementById("res").value="";
+  }
+ function show(input)
+ {
+        document.getElementById("res").value+=input;
+ }
+function  cal()
+{
+        var output=eval(document.getElementById("res").value);
+        document.getElementById("res").value=output;
+}
+
+</script>
+</body>
+</html>
